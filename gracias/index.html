@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tu código · Dale Que Va</title>
-  <meta name="description" content="Tu código para desbloquear el nivel Hot de Dale Que Va.">
+  <meta name="description" content="Tu código para desbloquear tu compra en Dale Que Va.">
   <meta name="theme-color" content="#07060d">
   <meta name="rating" content="adult">
   <link rel="canonical" href="https://dalequeva.byfoogles.app/gracias/">
@@ -12,13 +12,13 @@
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tu código · Dale Que Va">
-  <meta property="og:description" content="Tu código para desbloquear el nivel Hot de Dale Que Va.">
+  <meta property="og:description" content="Tu código para desbloquear tu compra en Dale Que Va.">
   <meta property="og:url" content="https://dalequeva.byfoogles.app/gracias/">
   <meta property="og:image" content="https://dalequeva.byfoogles.app/img/compartir.jpg">
   <meta property="og:locale" content="es_AR">
   <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/estilos.css?v=1ec8bc7c">
+  <link rel="stylesheet" href="/estilos.css?v=76c6e7fe">
 </head>
 <body class="cargando">
   <div class="cursor" aria-hidden="true"></div>
@@ -43,7 +43,7 @@
   <main>
     <section class="pagina">
       <div class="envoltura">
-        <p class="etiqueta">Nivel Hot</p>
+        <p class="etiqueta">Tu compra</p>
         <h1 id="titulo">Buscando tu pago…</h1>
         <div class="tarjeta hot oculto" id="listo">
           <p>¡Gracias por la compra! Este es tu código. Guardalo: te sirve si reinstalás la app.</p>
@@ -55,7 +55,7 @@
           <p style="margin-top:16px">«Activar en la app» funciona desde el celu donde tenés Dale Que Va instalada. Si no, copiá el código y pegalo en la app: <b>Ajustes → Ingresar código</b>.</p>
         </div>
         <p class="mensaje error oculto" id="error"></p>
-        <p style="margin-top:24px"><a href="/comprar/">Volver a Comprar Hot</a></p>
+        <p style="margin-top:24px"><a href="/comprar/">Volver a Comprar</a></p>
       </div>
     </section>
   </main>
@@ -69,12 +69,12 @@
       <nav>
         <a href="/terminos/">Términos y avisos</a>
         <a href="/privacidad/">Privacidad</a>
-        <a href="/comprar/">Comprar Hot</a>
+        <a href="/comprar/">Comprar</a>
         <a class="arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
       </nav>
     </div>
   </footer>
-  <script src="/sitio.js?v=ee6eac7c"></script>
+  <script src="/sitio.js?v=6c98d114"></script>
   <script src="/animaciones.js?v=3c3259d1"></script>
   <script>
     const parametros = new URLSearchParams(location.search);
@@ -91,7 +91,7 @@
         const r = await pedir("/codigo?pago=" + encodeURIComponent(pago));
         if (r.pendiente) return error(r.error, "Tu pago está pendiente");
         if (!r.codigo) return error(r.error || "Probá de nuevo en un rato.");
-        titulo.textContent = "¡Hot desbloqueado!";
+        titulo.textContent = r.producto === "amiguitas" ? "¡Amiguitas desbloqueado!" : "¡Pack completo desbloqueado!";
         document.getElementById("codigo").textContent = r.codigo;
         document.getElementById("activar").href = "dalequeva://activar?c=" + encodeURIComponent(r.codigo);
         document.getElementById("copiar").onclick = async (ev) => {

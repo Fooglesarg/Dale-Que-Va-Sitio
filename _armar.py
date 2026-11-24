@@ -79,7 +79,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, scripts="", carga=False):
       <nav>
         <a href="/terminos/">Términos y avisos</a>
         <a href="/privacidad/">Privacidad</a>
-        <a href="/comprar/">Comprar Hot</a>
+        <a href="/comprar/">Comprar</a>
         <a class="arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
       </nav>
     </div>
@@ -128,8 +128,8 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
 
       <div class="tira">
         <span class="tira-nivel" style="--c: var(--cian)"><i></i><span>Amigos<br><small>Gratis</small></span></span>
-        <span class="tira-nivel" style="--c: var(--violeta)"><i></i><span>Amiguitas<br><small>Gratis</small></span></span>
-        <span class="tira-nivel" style="--c: var(--hot)"><i></i><span>Hot<br><small>Pago único</small></span></span>
+        <span class="tira-nivel" style="--c: var(--violeta)"><i></i><span>Amiguitas<br><small>Pago único</small></span></span>
+        <span class="tira-nivel" style="--c: var(--hot)"><i></i><span>Hot<br><small>Pack completo</small></span></span>
         <span class="tira-dato"><b>0</b> anuncios</span>
         <span class="tira-dato" style="margin-left:0"><b>1</b> celu para todos</span>
       </div>
@@ -173,8 +173,8 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
         </div>
         <div class="niveles">
           <div class="nivel revelar"><span class="num">01</span><span class="precio-nivel">GRATIS</span><h3>Amigos</h3><p>Para arrancar: tragos, risas, anécdotas y retos para cualquier grupo.</p></div>
-          <div class="nivel amiguitas revelar"><span class="num">02</span><span class="precio-nivel">GRATIS</span><h3>Amiguitas</h3><p>Más confianza: chamuyo, confesiones, picos y un poco de roce.</p></div>
-          <div class="nivel hot revelar"><span class="num">03</span><span class="precio-nivel">+18 · PAGO ÚNICO</span><h3>Hot</h3><p>Sin filtros: deseos, fantasías, prendas y retos para grupos sin tabúes.</p></div>
+          <div class="nivel amiguitas revelar"><span class="num">02</span><span class="precio-nivel">PAGO ÚNICO</span><h3>Amiguitas</h3><p>Más confianza: chamuyo, confesiones, picos y un poco de roce.</p></div>
+          <div class="nivel hot revelar"><span class="num">03</span><span class="precio-nivel">+18 · PACK COMPLETO</span><h3>Hot</h3><p>Sin filtros: deseos, fantasías, prendas y retos para grupos sin tabúes.</p></div>
         </div>
       </div>
     </section>
@@ -203,20 +203,21 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
       <div class="envoltura">
         <div class="caja-hot revelar">
           <div>
-            <p class="sobre rojo">● Nivel Hot · +18</p>
-            <h2>Desbloqueá el Hot para siempre</h2>
-            <p class="bajada">Una sola compra por Mercado Pago y el nivel Hot queda abierto en todos los juegos que lo tienen, incluidos Dados del Deseo y Strip Poker.</p>
+            <p class="sobre rojo">● Pack completo · Amiguitas + Hot · +18</p>
+            <h2>Desbloqueá todo para siempre</h2>
+            <p class="bajada">Amigos es gratis. Con una sola compra por Mercado Pago abrís Amiguitas y Hot en todos los juegos que los tienen, incluidos Dados del Deseo y Strip Poker.</p>
             <ul>
               <li>Pago único: sin suscripciones ni cobros escondidos.</li>
+              <li>¿Solo querés Amiguitas? También se vende sola: <span data-precio="amiguitas">…</span>.</li>
               <li>Recibís un código al instante y lo activás con un toque.</li>
               <li>Si reinstalás la app, el mismo código te sirve.</li>
             </ul>
           </div>
           <div class="lado">
             <div class="candado" aria-hidden="true">🔓</div>
-            <p class="precio"><span data-precio>…</span><small>pago único</small></p>
+            <p class="precio"><span data-precio="pack">…</span><small>pack completo · pago único</small></p>
             <div class="fila-botones" style="justify-content:center">
-              <a class="boton hot" href="/comprar/">Comprar Hot <span>↗</span></a>
+              <a class="boton hot" href="/comprar/?producto=pack">Comprar el pack <span>↗</span></a>
             </div>
           </div>
         </div>
@@ -247,11 +248,11 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
       <div class="envoltura preguntas-grilla">
         <div class="titulo-seccion"><p class="etiqueta">● Preguntas</p><h2 data-partir>Lo que nos <em>suelen preguntar</em></h2></div>
         <div>
-          <details><summary>¿Es gratis?</summary><p>Sí. Los niveles Amigos y Amiguitas son gratis y sin anuncios. Solo el nivel Hot se paga, una única vez.</p></details>
-          <details><summary>¿Necesita internet?</summary><p>No. Todo funciona sin conexión. Solo se usa internet para comprar el Hot.</p></details>
+          <details><summary>¿Es gratis?</summary><p>El nivel Amigos es gratis, sin anuncios, en todos los juegos. Amiguitas y Hot se desbloquean con un pago único: Amiguitas sola, o el pack completo con los dos.</p></details>
+          <details><summary>¿Necesita internet?</summary><p>No. Todo funciona sin conexión. Solo se usa internet para comprar.</p></details>
           <details><summary>¿Está en Play Store?</summary><p>Por ahora no: se descarga desde este sitio. Por eso Android pide permiso para instalarla.</p></details>
           <details><summary>¿Hay versión para iPhone?</summary><p>Todavía no. Por ahora es solo para Android.</p></details>
-          <details><summary>Compré el Hot y perdí el código</summary><p>Entrá a <a href="/comprar/">Comprar Hot</a> y usá «Ya pagué»: con el número de operación de Mercado Pago lo recuperás.</p></details>
+          <details><summary>Compré y perdí el código</summary><p>Entrá a <a href="/comprar/">Comprar</a> y usá «Ya pagué»: con el número de operación de Mercado Pago lo recuperás.</p></details>
           <details><summary>¿Guardan mis datos?</summary><p>No. La app no tiene cuentas ni manda datos a ningún lado: los nombres de los jugadores quedan solo en tu celu. Más detalles en <a href="/privacidad/">Privacidad</a>.</p></details>
         </div>
       </div>
@@ -261,16 +262,31 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
     </section>""", carga=True)
 
 # ---------------------------------------------------------------- Comprar
-pagina("comprar", "Comprar el nivel Hot · Dale Que Va",
-       "Desbloqueá el nivel Hot de Dale Que Va con un pago único por Mercado Pago.",
+pagina("comprar", "Comprar · Dale Que Va",
+       "Desbloqueá Amiguitas o el pack completo (Amiguitas + Hot) de Dale Que Va con un pago único por Mercado Pago.",
        """    <section class="pagina">
       <div class="envoltura">
-        <p class="etiqueta">Nivel Hot</p>
-        <h1 data-partir>Desbloqueá el Hot</h1>
-        <p>Una sola compra y el nivel Hot queda abierto para siempre en todos los juegos que lo tienen. Al pagar recibís un código que activás con un toque desde el celu.</p>
+        <p class="etiqueta">Comprar</p>
+        <h1 data-partir>Desbloqueá la previa</h1>
+        <p>Amigos es gratis. Elegí qué querés abrir: es una sola compra y queda para siempre en todos los juegos. Al pagar recibís un código que activás con un toque desde el celu.</p>
+
+        <div class="productos" role="radiogroup" aria-label="Qué querés comprar">
+          <label class="producto amiguitas">
+            <input type="radio" name="producto" value="amiguitas">
+            <span class="producto-nombre">Amiguitas</span>
+            <span class="producto-precio" data-precio="amiguitas">…</span>
+            <span class="producto-detalle">Más confianza: chamuyo, confesiones, picos y un poco de roce.</span>
+          </label>
+          <label class="producto hot">
+            <input type="radio" name="producto" value="pack" checked>
+            <span class="producto-sello">Recomendado</span>
+            <span class="producto-nombre">Pack completo</span>
+            <span class="producto-precio" data-precio="pack">…</span>
+            <span class="producto-detalle">Amiguitas + Hot (+18): deseos, fantasías, Dados del Deseo y Strip Poker.</span>
+          </label>
+        </div>
 
         <div class="tarjeta hot">
-          <p class="precio"><span data-precio>…</span> <small>pago único · Mercado Pago</small></p>
           <label class="casilla"><input type="checkbox" id="mayor"><span>Tengo 18 años o más.</span></label>
           <label class="casilla"><input type="checkbox" id="acepto"><span>Leí y acepto los <a href="/terminos/" target="_blank">términos y avisos</a>.</span></label>
           <div class="fila-botones">
@@ -291,7 +307,7 @@ pagina("comprar", "Comprar el nivel Hot · Dale Que Va",
 
         <h2>Cómo funciona</h2>
         <ol>
-          <li>Pagás con Mercado Pago (tarjeta, dinero en cuenta u otros medios).</li>
+          <li>Elegís Amiguitas o el pack completo y pagás con Mercado Pago (tarjeta, dinero en cuenta u otros medios).</li>
           <li>Volvés a esta página y aparece tu código.</li>
           <li>Tocás «Activar en la app» desde el celu, o copiás el código y lo pegás en la app (Ajustes → Ingresar código).</li>
         </ol>
@@ -300,18 +316,26 @@ pagina("comprar", "Comprar el nivel Hot · Dale Que Va",
     </section>""",
        """  <script>
     const mayor = document.getElementById("mayor"), acepto = document.getElementById("acepto"), pagar = document.getElementById("pagar");
+    const opciones = [...document.querySelectorAll('input[name="producto"]')];
     const mostrar = (id, texto) => { const e = document.getElementById(id); e.textContent = texto; e.classList.toggle("oculto", !texto); };
-    precioListo.then((precio) => {
-      const actualizar = () => (pagar.disabled = !(precio && mayor.checked && acepto.checked));
+    const pedido = new URLSearchParams(location.search).get("producto");
+    opciones.forEach((o) => (o.checked = o.value === (pedido === "amiguitas" ? "amiguitas" : "pack")));
+    const elegido = () => opciones.find((o) => o.checked).value;
+    precioListo.then((precios) => {
+      const actualizar = () => {
+        pagar.disabled = !(precios && mayor.checked && acepto.checked);
+        pagar.textContent = precios ? `Pagar ${pesos(precios[elegido()])} con Mercado Pago` : "Pagar con Mercado Pago";
+      };
       mayor.onchange = acepto.onchange = actualizar;
+      opciones.forEach((o) => (o.onchange = actualizar));
       actualizar();
-      if (!precio) mostrar("error-pago", "La compra se habilita muy pronto.");
+      if (!precios) mostrar("error-pago", "La compra se habilita muy pronto.");
     });
     if (new URLSearchParams(location.search).get("error") === "pago") mostrar("error-pago", "El pago no se completó. Podés intentar de nuevo.");
     pagar.onclick = async () => {
       pagar.disabled = true; mostrar("error-pago", "");
       try {
-        const r = await pedir("/orden", { method: "POST" });
+        const r = await pedir("/orden", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ producto: elegido() }) });
         if (!r.url) throw new Error(r.error);
         location.href = r.url;
       } catch (e) {
@@ -328,10 +352,10 @@ pagina("comprar", "Comprar el nivel Hot · Dale Que Va",
 
 # ---------------------------------------------------------------- Gracias
 pagina("gracias", "Tu código · Dale Que Va",
-       "Tu código para desbloquear el nivel Hot de Dale Que Va.",
+       "Tu código para desbloquear tu compra en Dale Que Va.",
        """    <section class="pagina">
       <div class="envoltura">
-        <p class="etiqueta">Nivel Hot</p>
+        <p class="etiqueta">Tu compra</p>
         <h1 id="titulo">Buscando tu pago…</h1>
         <div class="tarjeta hot oculto" id="listo">
           <p>¡Gracias por la compra! Este es tu código. Guardalo: te sirve si reinstalás la app.</p>
@@ -343,7 +367,7 @@ pagina("gracias", "Tu código · Dale Que Va",
           <p style="margin-top:16px">«Activar en la app» funciona desde el celu donde tenés Dale Que Va instalada. Si no, copiá el código y pegalo en la app: <b>Ajustes → Ingresar código</b>.</p>
         </div>
         <p class="mensaje error oculto" id="error"></p>
-        <p style="margin-top:24px"><a href="/comprar/">Volver a Comprar Hot</a></p>
+        <p style="margin-top:24px"><a href="/comprar/">Volver a Comprar</a></p>
       </div>
     </section>""",
        """  <script>
@@ -361,7 +385,7 @@ pagina("gracias", "Tu código · Dale Que Va",
         const r = await pedir("/codigo?pago=" + encodeURIComponent(pago));
         if (r.pendiente) return error(r.error, "Tu pago está pendiente");
         if (!r.codigo) return error(r.error || "Probá de nuevo en un rato.");
-        titulo.textContent = "¡Hot desbloqueado!";
+        titulo.textContent = r.producto === "amiguitas" ? "¡Amiguitas desbloqueado!" : "¡Pack completo desbloqueado!";
         document.getElementById("codigo").textContent = r.codigo;
         document.getElementById("activar").href = "dalequeva://activar?c=" + encodeURIComponent(r.codigo);
         document.getElementById("copiar").onclick = async (ev) => {
@@ -402,10 +426,10 @@ pagina("terminos", "Términos y avisos · Dale Que Va",
         <h2>Responsabilidad</h2>
         <p>Las consignas son propuestas para divertirse entre adultos. Cada jugador decide qué hace y es responsable de sus actos, y debe respetar las leyes del lugar donde juega. El desarrollador no se responsabiliza por el uso que se haga de la app ni por los daños que resulten de no respetar estos avisos o la ley.</p>
 
-        <h2>Compra del nivel Hot</h2>
+        <h2>Compras</h2>
         <ul>
-          <li>Los niveles Amigos y Amiguitas son gratis. El nivel Hot se desbloquea con un pago único por Mercado Pago, sin suscripción.</li>
-          <li>Al aprobarse el pago recibís un código de desbloqueo de uso personal. Si lo perdés, lo recuperás con el número de operación desde <a href="/comprar/">Comprar Hot</a>.</li>
+          <li>El nivel Amigos es gratis. El nivel Amiguitas y el pack completo (Amiguitas + Hot) se desbloquean con un pago único por Mercado Pago, sin suscripción.</li>
+          <li>Al aprobarse el pago recibís un código de desbloqueo de uso personal. Si lo perdés, lo recuperás con el número de operación desde <a href="/comprar/">Comprar</a>.</li>
           <li>El pago lo procesa Mercado Pago; nosotros no vemos ni guardamos los datos de tu tarjeta.</li>
           <li>Podés arrepentirte de la compra dentro de los 10 días corridos desde el pago con el <a href="/arrepentimiento/">botón de arrepentimiento</a>, sin dar explicaciones, y te devolvemos el dinero por el mismo medio.</li>
         </ul>
@@ -429,7 +453,7 @@ pagina("privacidad", "Política de privacidad · Dale Que Va",
           <li>No tiene cuentas, ni registro, ni anuncios, ni herramientas de seguimiento.</li>
           <li>Los nombres de los jugadores, los favoritos y los ajustes se guardan solo en tu celu y no se envían a ningún lado.</li>
           <li>Funciona sin internet. Solo usa la conexión si abrís la página de compra.</li>
-          <li>El código de desbloqueo se guarda en tu celu para recordar que compraste el Hot.</li>
+          <li>El código de desbloqueo se guarda en tu celu para recordar lo que compraste.</li>
         </ul>
 
         <h2>Este sitio</h2>
@@ -452,12 +476,12 @@ pagina("privacidad", "Política de privacidad · Dale Que Va",
 
 # ---------------------------------------------------------------- Arrepentimiento
 pagina("arrepentimiento", "Botón de arrepentimiento · Dale Que Va",
-       "Arrepentite de tu compra del nivel Hot dentro de los 10 días.",
+       "Arrepentite de tu compra en Dale Que Va dentro de los 10 días.",
        """    <section class="pagina">
       <div class="envoltura">
         <p class="etiqueta">Defensa del consumidor</p>
         <h1 data-partir>Botón de arrepentimiento</h1>
-        <p>Si compraste el nivel Hot, podés arrepentirte dentro de los <b>10 días corridos</b> desde el pago, sin dar explicaciones y sin costo. Te devolvemos el dinero por el mismo medio de pago.</p>
+        <p>Si compraste Amiguitas o el pack completo, podés arrepentirte dentro de los <b>10 días corridos</b> desde el pago, sin dar explicaciones y sin costo. Te devolvemos el dinero por el mismo medio de pago.</p>
 
         <div class="tarjeta">
           <h2 style="margin-top:0">Cómo pedirlo</h2>

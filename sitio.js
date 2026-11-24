@@ -29,20 +29,18 @@ async function pedir(ruta, opciones) {
   return { estado: r.status, ...datos };
 }
 
+// Precios por producto: { amiguitas, pack }. Cada lugar con data-precio="amiguitas|pack" muestra el suyo.
 async function cargarPrecio() {
   const lugares = document.querySelectorAll("[data-precio]");
-  if (!lugares.length) return null;
-  if (!SERVICIO) {
-    lugares.forEach((e) => (e.textContent = "Muy pronto"));
-    return null;
-  }
+  const pendiente = () => lugares.forEach((e) => (e.textContent = "Muy pronto"));
+  if (!SERVICIO) { pendiente(); return null; }
   try {
-    const { precio } = await pedir("/precio");
-    if (!precio) throw new Error();
-    lugares.forEach((e) => (e.textContent = pesos(precio)));
-    return precio;
+    const { precios } = await pedir("/precio");
+    if (!precios || !precios.pack) throw new Error();
+    lugares.forEach((e) => (e.textContent = pesos(precios[e.dataset.precio || "pack"])));
+    return precios;
   } catch {
-    lugares.forEach((e) => (e.textContent = "Muy pronto"));
+    pendiente();
     return null;
   }
 }

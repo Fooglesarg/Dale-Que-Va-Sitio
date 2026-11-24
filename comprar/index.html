@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Comprar el nivel Hot · Dale Que Va</title>
-  <meta name="description" content="Desbloqueá el nivel Hot de Dale Que Va con un pago único por Mercado Pago.">
+  <title>Comprar · Dale Que Va</title>
+  <meta name="description" content="Desbloqueá Amiguitas o el pack completo (Amiguitas + Hot) de Dale Que Va con un pago único por Mercado Pago.">
   <meta name="theme-color" content="#07060d">
   <meta name="rating" content="adult">
   <link rel="canonical" href="https://dalequeva.byfoogles.app/comprar/">
   <link rel="icon" href="/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Comprar el nivel Hot · Dale Que Va">
-  <meta property="og:description" content="Desbloqueá el nivel Hot de Dale Que Va con un pago único por Mercado Pago.">
+  <meta property="og:title" content="Comprar · Dale Que Va">
+  <meta property="og:description" content="Desbloqueá Amiguitas o el pack completo (Amiguitas + Hot) de Dale Que Va con un pago único por Mercado Pago.">
   <meta property="og:url" content="https://dalequeva.byfoogles.app/comprar/">
   <meta property="og:image" content="https://dalequeva.byfoogles.app/img/compartir.jpg">
   <meta property="og:locale" content="es_AR">
   <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/estilos.css?v=1ec8bc7c">
+  <link rel="stylesheet" href="/estilos.css?v=76c6e7fe">
 </head>
 <body class="cargando">
   <div class="cursor" aria-hidden="true"></div>
@@ -43,12 +43,27 @@
   <main>
     <section class="pagina">
       <div class="envoltura">
-        <p class="etiqueta">Nivel Hot</p>
-        <h1 data-partir>Desbloqueá el Hot</h1>
-        <p>Una sola compra y el nivel Hot queda abierto para siempre en todos los juegos que lo tienen. Al pagar recibís un código que activás con un toque desde el celu.</p>
+        <p class="etiqueta">Comprar</p>
+        <h1 data-partir>Desbloqueá la previa</h1>
+        <p>Amigos es gratis. Elegí qué querés abrir: es una sola compra y queda para siempre en todos los juegos. Al pagar recibís un código que activás con un toque desde el celu.</p>
+
+        <div class="productos" role="radiogroup" aria-label="Qué querés comprar">
+          <label class="producto amiguitas">
+            <input type="radio" name="producto" value="amiguitas">
+            <span class="producto-nombre">Amiguitas</span>
+            <span class="producto-precio" data-precio="amiguitas">…</span>
+            <span class="producto-detalle">Más confianza: chamuyo, confesiones, picos y un poco de roce.</span>
+          </label>
+          <label class="producto hot">
+            <input type="radio" name="producto" value="pack" checked>
+            <span class="producto-sello">Recomendado</span>
+            <span class="producto-nombre">Pack completo</span>
+            <span class="producto-precio" data-precio="pack">…</span>
+            <span class="producto-detalle">Amiguitas + Hot (+18): deseos, fantasías, Dados del Deseo y Strip Poker.</span>
+          </label>
+        </div>
 
         <div class="tarjeta hot">
-          <p class="precio"><span data-precio>…</span> <small>pago único · Mercado Pago</small></p>
           <label class="casilla"><input type="checkbox" id="mayor"><span>Tengo 18 años o más.</span></label>
           <label class="casilla"><input type="checkbox" id="acepto"><span>Leí y acepto los <a href="/terminos/" target="_blank">términos y avisos</a>.</span></label>
           <div class="fila-botones">
@@ -69,7 +84,7 @@
 
         <h2>Cómo funciona</h2>
         <ol>
-          <li>Pagás con Mercado Pago (tarjeta, dinero en cuenta u otros medios).</li>
+          <li>Elegís Amiguitas o el pack completo y pagás con Mercado Pago (tarjeta, dinero en cuenta u otros medios).</li>
           <li>Volvés a esta página y aparece tu código.</li>
           <li>Tocás «Activar en la app» desde el celu, o copiás el código y lo pegás en la app (Ajustes → Ingresar código).</li>
         </ol>
@@ -87,27 +102,35 @@
       <nav>
         <a href="/terminos/">Términos y avisos</a>
         <a href="/privacidad/">Privacidad</a>
-        <a href="/comprar/">Comprar Hot</a>
+        <a href="/comprar/">Comprar</a>
         <a class="arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
       </nav>
     </div>
   </footer>
-  <script src="/sitio.js?v=ee6eac7c"></script>
+  <script src="/sitio.js?v=6c98d114"></script>
   <script src="/animaciones.js?v=3c3259d1"></script>
   <script>
     const mayor = document.getElementById("mayor"), acepto = document.getElementById("acepto"), pagar = document.getElementById("pagar");
+    const opciones = [...document.querySelectorAll('input[name="producto"]')];
     const mostrar = (id, texto) => { const e = document.getElementById(id); e.textContent = texto; e.classList.toggle("oculto", !texto); };
-    precioListo.then((precio) => {
-      const actualizar = () => (pagar.disabled = !(precio && mayor.checked && acepto.checked));
+    const pedido = new URLSearchParams(location.search).get("producto");
+    opciones.forEach((o) => (o.checked = o.value === (pedido === "amiguitas" ? "amiguitas" : "pack")));
+    const elegido = () => opciones.find((o) => o.checked).value;
+    precioListo.then((precios) => {
+      const actualizar = () => {
+        pagar.disabled = !(precios && mayor.checked && acepto.checked);
+        pagar.textContent = precios ? `Pagar ${pesos(precios[elegido()])} con Mercado Pago` : "Pagar con Mercado Pago";
+      };
       mayor.onchange = acepto.onchange = actualizar;
+      opciones.forEach((o) => (o.onchange = actualizar));
       actualizar();
-      if (!precio) mostrar("error-pago", "La compra se habilita muy pronto.");
+      if (!precios) mostrar("error-pago", "La compra se habilita muy pronto.");
     });
     if (new URLSearchParams(location.search).get("error") === "pago") mostrar("error-pago", "El pago no se completó. Podés intentar de nuevo.");
     pagar.onclick = async () => {
       pagar.disabled = true; mostrar("error-pago", "");
       try {
-        const r = await pedir("/orden", { method: "POST" });
+        const r = await pedir("/orden", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ producto: elegido() }) });
         if (!r.url) throw new Error(r.error);
         location.href = r.url;
       } catch (e) {

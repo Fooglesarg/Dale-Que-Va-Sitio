@@ -297,3 +297,16 @@ footer { background: var(--fondo); padding: 60px var(--margen) 34px; overflow: h
 
 /* ---------------------------------------------------------------- Aviso del modo prueba (?prueba=1) */
 .aviso-prueba { position: fixed; z-index: 120; left: 50%; bottom: 14px; transform: translateX(-50%); padding: 8px 16px; border-radius: 999px; background: var(--dorado); color: var(--fondo); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 0 0 24px rgba(255, 211, 78, .5); white-space: nowrap; }
+
+/* ---------------------------------------------------------------- Productos (Comprar) */
+.productos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+.producto { --c: var(--hot); position: relative; display: flex; flex-direction: column; gap: 6px; padding: 24px 22px 22px; border-radius: 26px; border: 2px solid var(--borde); background: var(--superficie); cursor: pointer; transition: border-color .3s, box-shadow .3s, transform .3s var(--ease); }
+.producto.amiguitas { --c: var(--violeta); }
+.producto:hover { transform: translateY(-3px); }
+.producto:has(input:checked) { border-color: var(--c); box-shadow: 0 0 40px color-mix(in srgb, var(--c) 35%, transparent); background: linear-gradient(150deg, color-mix(in srgb, var(--c) 14%, transparent), transparent 60%), var(--superficie); }
+.producto input { position: absolute; top: 22px; right: 22px; width: 20px; height: 20px; accent-color: var(--c); }
+.producto-nombre { font-family: "Unbounded", sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--c); }
+.producto-precio { font-family: "Anton", sans-serif; font-size: clamp(40px, 5vw, 56px); line-height: 1.05; }
+.producto-detalle { color: var(--suave); font-size: 15px; }
+.producto-sello { align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--fondo); background: var(--c); border-radius: 999px; padding: 3px 10px; box-shadow: 0 0 16px color-mix(in srgb, var(--c) 60%, transparent); }
+@media (max-width: 640px) { .productos { grid-template-columns: 1fr; } }

@@ -18,7 +18,7 @@
   <meta property="og:locale" content="es_AR">
   <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/estilos.css?v=1ec8bc7c">
+  <link rel="stylesheet" href="/estilos.css?v=76c6e7fe">
 </head>
 <body class="cargando">
   <div class="carga" aria-hidden="true">
@@ -71,8 +71,8 @@
 
       <div class="tira">
         <span class="tira-nivel" style="--c: var(--cian)"><i></i><span>Amigos<br><small>Gratis</small></span></span>
-        <span class="tira-nivel" style="--c: var(--violeta)"><i></i><span>Amiguitas<br><small>Gratis</small></span></span>
-        <span class="tira-nivel" style="--c: var(--hot)"><i></i><span>Hot<br><small>Pago único</small></span></span>
+        <span class="tira-nivel" style="--c: var(--violeta)"><i></i><span>Amiguitas<br><small>Pago único</small></span></span>
+        <span class="tira-nivel" style="--c: var(--hot)"><i></i><span>Hot<br><small>Pack completo</small></span></span>
         <span class="tira-dato"><b>0</b> anuncios</span>
         <span class="tira-dato" style="margin-left:0"><b>1</b> celu para todos</span>
       </div>
@@ -116,8 +116,8 @@
         </div>
         <div class="niveles">
           <div class="nivel revelar"><span class="num">01</span><span class="precio-nivel">GRATIS</span><h3>Amigos</h3><p>Para arrancar: tragos, risas, anécdotas y retos para cualquier grupo.</p></div>
-          <div class="nivel amiguitas revelar"><span class="num">02</span><span class="precio-nivel">GRATIS</span><h3>Amiguitas</h3><p>Más confianza: chamuyo, confesiones, picos y un poco de roce.</p></div>
-          <div class="nivel hot revelar"><span class="num">03</span><span class="precio-nivel">+18 · PAGO ÚNICO</span><h3>Hot</h3><p>Sin filtros: deseos, fantasías, prendas y retos para grupos sin tabúes.</p></div>
+          <div class="nivel amiguitas revelar"><span class="num">02</span><span class="precio-nivel">PAGO ÚNICO</span><h3>Amiguitas</h3><p>Más confianza: chamuyo, confesiones, picos y un poco de roce.</p></div>
+          <div class="nivel hot revelar"><span class="num">03</span><span class="precio-nivel">+18 · PACK COMPLETO</span><h3>Hot</h3><p>Sin filtros: deseos, fantasías, prendas y retos para grupos sin tabúes.</p></div>
         </div>
       </div>
     </section>
@@ -289,20 +289,21 @@
       <div class="envoltura">
         <div class="caja-hot revelar">
           <div>
-            <p class="sobre rojo">● Nivel Hot · +18</p>
-            <h2>Desbloqueá el Hot para siempre</h2>
-            <p class="bajada">Una sola compra por Mercado Pago y el nivel Hot queda abierto en todos los juegos que lo tienen, incluidos Dados del Deseo y Strip Poker.</p>
+            <p class="sobre rojo">● Pack completo · Amiguitas + Hot · +18</p>
+            <h2>Desbloqueá todo para siempre</h2>
+            <p class="bajada">Amigos es gratis. Con una sola compra por Mercado Pago abrís Amiguitas y Hot en todos los juegos que los tienen, incluidos Dados del Deseo y Strip Poker.</p>
             <ul>
               <li>Pago único: sin suscripciones ni cobros escondidos.</li>
+              <li>¿Solo querés Amiguitas? También se vende sola: <span data-precio="amiguitas">…</span>.</li>
               <li>Recibís un código al instante y lo activás con un toque.</li>
               <li>Si reinstalás la app, el mismo código te sirve.</li>
             </ul>
           </div>
           <div class="lado">
             <div class="candado" aria-hidden="true">🔓</div>
-            <p class="precio"><span data-precio>…</span><small>pago único</small></p>
+            <p class="precio"><span data-precio="pack">…</span><small>pack completo · pago único</small></p>
             <div class="fila-botones" style="justify-content:center">
-              <a class="boton hot" href="/comprar/">Comprar Hot <span>↗</span></a>
+              <a class="boton hot" href="/comprar/?producto=pack">Comprar el pack <span>↗</span></a>
             </div>
           </div>
         </div>
@@ -333,11 +334,11 @@
       <div class="envoltura preguntas-grilla">
         <div class="titulo-seccion"><p class="etiqueta">● Preguntas</p><h2 data-partir>Lo que nos <em>suelen preguntar</em></h2></div>
         <div>
-          <details><summary>¿Es gratis?</summary><p>Sí. Los niveles Amigos y Amiguitas son gratis y sin anuncios. Solo el nivel Hot se paga, una única vez.</p></details>
-          <details><summary>¿Necesita internet?</summary><p>No. Todo funciona sin conexión. Solo se usa internet para comprar el Hot.</p></details>
+          <details><summary>¿Es gratis?</summary><p>El nivel Amigos es gratis, sin anuncios, en todos los juegos. Amiguitas y Hot se desbloquean con un pago único: Amiguitas sola, o el pack completo con los dos.</p></details>
+          <details><summary>¿Necesita internet?</summary><p>No. Todo funciona sin conexión. Solo se usa internet para comprar.</p></details>
           <details><summary>¿Está en Play Store?</summary><p>Por ahora no: se descarga desde este sitio. Por eso Android pide permiso para instalarla.</p></details>
           <details><summary>¿Hay versión para iPhone?</summary><p>Todavía no. Por ahora es solo para Android.</p></details>
-          <details><summary>Compré el Hot y perdí el código</summary><p>Entrá a <a href="/comprar/">Comprar Hot</a> y usá «Ya pagué»: con el número de operación de Mercado Pago lo recuperás.</p></details>
+          <details><summary>Compré y perdí el código</summary><p>Entrá a <a href="/comprar/">Comprar</a> y usá «Ya pagué»: con el número de operación de Mercado Pago lo recuperás.</p></details>
           <details><summary>¿Guardan mis datos?</summary><p>No. La app no tiene cuentas ni manda datos a ningún lado: los nombres de los jugadores quedan solo en tu celu. Más detalles en <a href="/privacidad/">Privacidad</a>.</p></details>
         </div>
       </div>
@@ -356,12 +357,12 @@
       <nav>
         <a href="/terminos/">Términos y avisos</a>
         <a href="/privacidad/">Privacidad</a>
-        <a href="/comprar/">Comprar Hot</a>
+        <a href="/comprar/">Comprar</a>
         <a class="arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
       </nav>
     </div>
   </footer>
-  <script src="/sitio.js?v=ee6eac7c"></script>
+  <script src="/sitio.js?v=6c98d114"></script>
   <script src="/animaciones.js?v=3c3259d1"></script>
 
 </body>
