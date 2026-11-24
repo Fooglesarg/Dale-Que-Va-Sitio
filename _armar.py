@@ -4,10 +4,17 @@ Uso: python3 _armar.py   (GitHub Pages no publica archivos que empiezan con «_�
 
 Las tarjetas de juegos salen de _juegos.html (generado desde el catálogo de la app).
 """
+import hashlib
 import os
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 URL = "https://dalequeva.byfoogles.app"
+
+
+def version(archivo):
+    """Huella corta del archivo: cambia la URL cuando cambia el contenido y evita la caché vieja."""
+    with open(os.path.join(RAIZ, archivo), "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()[:8]
 
 
 def pagina(ruta, titulo, descripcion, cuerpo, scripts="", carga=False):
@@ -37,7 +44,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, scripts="", carga=False):
   <meta property="og:locale" content="es_AR">
   <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/estilos.css">
+  <link rel="stylesheet" href="/estilos.css?v={version('estilos.css')}">
 </head>
 <body class="cargando">
 {pantalla_carga}  <div class="cursor" aria-hidden="true"></div>
@@ -77,8 +84,8 @@ def pagina(ruta, titulo, descripcion, cuerpo, scripts="", carga=False):
       </nav>
     </div>
   </footer>
-  <script src="/sitio.js"></script>
-  <script src="/animaciones.js"></script>
+  <script src="/sitio.js?v={version('sitio.js')}"></script>
+  <script src="/animaciones.js?v={version('animaciones.js')}"></script>
 {scripts}
 </body>
 </html>
