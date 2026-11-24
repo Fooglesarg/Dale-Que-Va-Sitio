@@ -294,3 +294,6 @@ footer { background: var(--fondo); padding: 60px var(--margen) 34px; overflow: h
 @media (max-width: 860px) { .volver-texto { display: none; } .volver { padding: 5px; } .barra-izq { gap: 12px; } }
 @media (max-width: 380px) { .marca { font-size: 11px; letter-spacing: 1px; } }
 @media (prefers-reduced-motion: reduce) { .volver, .volver-flecha, .volver:hover .volver-flecha { animation: none; } }
+
+/* ---------------------------------------------------------------- Aviso del modo prueba (?prueba=1) */
+.aviso-prueba { position: fixed; z-index: 120; left: 50%; bottom: 14px; transform: translateX(-50%); padding: 8px 16px; border-radius: 999px; background: var(--dorado); color: var(--fondo); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 0 0 24px rgba(255, 211, 78, .5); white-space: nowrap; }

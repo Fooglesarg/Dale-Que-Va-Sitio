@@ -18,7 +18,7 @@
   <meta property="og:locale" content="es_AR">
   <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/estilos.css?v=7eec1694">
+  <link rel="stylesheet" href="/estilos.css?v=1ec8bc7c">
 </head>
 <body class="cargando">
   <div class="cursor" aria-hidden="true"></div>
@@ -92,7 +92,7 @@
       </nav>
     </div>
   </footer>
-  <script src="/sitio.js?v=b6bda790"></script>
+  <script src="/sitio.js?v=ee6eac7c"></script>
   <script src="/animaciones.js?v=3c3259d1"></script>
   <script>
     const mayor = document.getElementById("mayor"), acepto = document.getElementById("acepto"), pagar = document.getElementById("pagar");
@@ -107,7 +107,7 @@
     pagar.onclick = async () => {
       pagar.disabled = true; mostrar("error-pago", "");
       try {
-        const r = await pedir("/preferencia", { method: "POST" });
+        const r = await pedir("/orden", { method: "POST" });
         if (!r.url) throw new Error(r.error);
         location.href = r.url;
       } catch (e) {

@@ -311,7 +311,7 @@ pagina("comprar", "Comprar el nivel Hot · Dale Que Va",
     pagar.onclick = async () => {
       pagar.disabled = true; mostrar("error-pago", "");
       try {
-        const r = await pedir("/preferencia", { method: "POST" });
+        const r = await pedir("/orden", { method: "POST" });
         if (!r.url) throw new Error(r.error);
         location.href = r.url;
       } catch (e) {
@@ -348,7 +348,7 @@ pagina("gracias", "Tu código · Dale Que Va",
     </section>""",
        """  <script>
     const parametros = new URLSearchParams(location.search);
-    const pago = parametros.get("payment_id") || parametros.get("collection_id");
+    const pago = parametros.get("order_id") || parametros.get("payment_id") || parametros.get("collection_id");
     const titulo = document.getElementById("titulo");
     const error = (texto, tituloTexto = "No pudimos darte el código") => {
       titulo.textContent = tituloTexto;
