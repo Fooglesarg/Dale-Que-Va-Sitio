@@ -16,26 +16,29 @@
   <meta property="og:url" content="https://dalequeva.byfoogles.app/comprar/">
   <meta property="og:image" content="https://dalequeva.byfoogles.app/img/compartir.jpg">
   <meta property="og:locale" content="es_AR">
-  <link rel="preload" href="/fuentes/outfit.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/estilos.css">
 </head>
-<body>
+<body class="cargando">
+  <div class="cursor" aria-hidden="true"></div>
   <header class="barra">
-    <div class="envoltura">
-      <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="34" height="34">Dale Que Va</a>
-      <nav>
-        <a href="/#juegos">Juegos</a>
-        <a href="/#hot">Hot</a>
-        <a href="/#instalar">Instalar</a>
-        <a class="boton chico" data-apk href="#">Descargar</a>
-      </nav>
+    <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="32" height="32">Dale Que Va</a>
+    <nav>
+      <a href="/#juegos"><i></i>Juegos</a>
+      <a href="/#hot">Hot</a>
+      <a href="/#instalar">Instalar</a>
+    </nav>
+    <div class="barra-der">
+      <span class="reloj">Hora de previa <span id="hora">--:--</span></span>
+      <a class="boton chico" data-apk href="#">Descargar</a>
     </div>
   </header>
   <main>
     <section class="pagina">
       <div class="envoltura">
         <p class="etiqueta">Nivel Hot</p>
-        <h1>Desbloqueá el Hot</h1>
+        <h1 data-partir>Desbloqueá el Hot</h1>
         <p>Una sola compra y el nivel Hot queda abierto para siempre en todos los juegos que lo tienen. Al pagar recibís un código que activás con un toque desde el celu.</p>
 
         <div class="tarjeta hot">
@@ -69,9 +72,10 @@
     </section>
   </main>
   <footer>
-    <div class="envoltura">
+    <div class="pie-gigante" aria-hidden="true">DALE QUE VA</div>
+    <div class="pie-fila">
       <div>
-        <p><span class="chip18">+18</span> Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
+        <p><span class="chip18">+18</span>&nbsp; Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
         <p style="margin-top:8px">© <span data-anio></span> Dale Que Va · una app de <a href="https://byfoogles.app">ByFoogles</a></p>
       </div>
       <nav>
@@ -83,6 +87,7 @@
     </div>
   </footer>
   <script src="/sitio.js"></script>
+  <script src="/animaciones.js"></script>
   <script>
     const mayor = document.getElementById("mayor"), acepto = document.getElementById("acepto"), pagar = document.getElementById("pagar");
     const mostrar = (id, texto) => { const e = document.getElementById(id); e.textContent = texto; e.classList.toggle("oculto", !texto); };

@@ -16,26 +16,29 @@
   <meta property="og:url" content="https://dalequeva.byfoogles.app/arrepentimiento/">
   <meta property="og:image" content="https://dalequeva.byfoogles.app/img/compartir.jpg">
   <meta property="og:locale" content="es_AR">
-  <link rel="preload" href="/fuentes/outfit.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/estilos.css">
 </head>
-<body>
+<body class="cargando">
+  <div class="cursor" aria-hidden="true"></div>
   <header class="barra">
-    <div class="envoltura">
-      <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="34" height="34">Dale Que Va</a>
-      <nav>
-        <a href="/#juegos">Juegos</a>
-        <a href="/#hot">Hot</a>
-        <a href="/#instalar">Instalar</a>
-        <a class="boton chico" data-apk href="#">Descargar</a>
-      </nav>
+    <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="32" height="32">Dale Que Va</a>
+    <nav>
+      <a href="/#juegos"><i></i>Juegos</a>
+      <a href="/#hot">Hot</a>
+      <a href="/#instalar">Instalar</a>
+    </nav>
+    <div class="barra-der">
+      <span class="reloj">Hora de previa <span id="hora">--:--</span></span>
+      <a class="boton chico" data-apk href="#">Descargar</a>
     </div>
   </header>
   <main>
     <section class="pagina">
       <div class="envoltura">
         <p class="etiqueta">Defensa del consumidor</p>
-        <h1>Botón de arrepentimiento</h1>
+        <h1 data-partir>Botón de arrepentimiento</h1>
         <p>Si compraste el nivel Hot, podés arrepentirte dentro de los <b>10 días corridos</b> desde el pago, sin dar explicaciones y sin costo. Te devolvemos el dinero por el mismo medio de pago.</p>
 
         <div class="tarjeta">
@@ -50,9 +53,10 @@
     </section>
   </main>
   <footer>
-    <div class="envoltura">
+    <div class="pie-gigante" aria-hidden="true">DALE QUE VA</div>
+    <div class="pie-fila">
       <div>
-        <p><span class="chip18">+18</span> Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
+        <p><span class="chip18">+18</span>&nbsp; Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
         <p style="margin-top:8px">© <span data-anio></span> Dale Que Va · una app de <a href="https://byfoogles.app">ByFoogles</a></p>
       </div>
       <nav>
@@ -64,6 +68,7 @@
     </div>
   </footer>
   <script src="/sitio.js"></script>
+  <script src="/animaciones.js"></script>
   <script>
     // Correo para los pedidos de arrepentimiento (completar antes de habilitar la venta).
     const CONTACTO = "";

@@ -16,68 +16,112 @@
   <meta property="og:url" content="https://dalequeva.byfoogles.app/">
   <meta property="og:image" content="https://dalequeva.byfoogles.app/img/compartir.jpg">
   <meta property="og:locale" content="es_AR">
-  <link rel="preload" href="/fuentes/outfit.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fuentes/unbounded.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuentes/anton.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/estilos.css">
 </head>
-<body>
+<body class="cargando">
+  <div class="carga" aria-hidden="true">
+    <div class="carga-nombre"><span>D</span><span>A</span><span>L</span><span>E</span><br><span>Q</span><span>U</span><span>E</span> <span>V</span><span>A</span></div>
+    <div class="carga-pie"><span>Juegos de previa · +18</span><span class="carga-numero">000</span></div>
+  </div>
+  <div class="cursor" aria-hidden="true"></div>
   <header class="barra">
-    <div class="envoltura">
-      <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="34" height="34">Dale Que Va</a>
-      <nav>
-        <a href="/#juegos">Juegos</a>
-        <a href="/#hot">Hot</a>
-        <a href="/#instalar">Instalar</a>
-        <a class="boton chico" data-apk href="#">Descargar</a>
-      </nav>
+    <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="32" height="32">Dale Que Va</a>
+    <nav>
+      <a href="/#juegos"><i></i>Juegos</a>
+      <a href="/#hot">Hot</a>
+      <a href="/#instalar">Instalar</a>
+    </nav>
+    <div class="barra-der">
+      <span class="reloj">Hora de previa <span id="hora">--:--</span></span>
+      <a class="boton chico" data-apk href="#">Descargar</a>
     </div>
   </header>
   <main>
     <section class="portada">
-      <div class="envoltura">
-        <div>
-          <p class="etiqueta">Juegos de previa · Android</p>
-          <h1 class="logo-neon">DALE<br>QUE VA</h1>
-          <p class="lema">24 juegos para la previa en un solo celu que pasa de mano en mano. Cargás los nombres una vez y la app se encarga del resto.</p>
-          <div class="acciones">
-            <a class="boton" data-apk href="#">Descargar para Android</a>
-            <a class="boton contorno cian" href="#juegos">Ver los juegos</a>
-          </div>
-          <p class="nota"><span class="chip18">+18</span>&nbsp; Gratis con Amigos y Amiguitas · Funciona sin internet · Sin anuncios</p>
+      <canvas id="aurora" aria-hidden="true"></canvas>
+      <div class="estrellas" aria-hidden="true"></div>
+      <div class="grano" aria-hidden="true"></div>
+
+      <div class="portada-contenido">
+        <p class="etiqueta">Juegos de previa · Android · <span class="chip18">+18</span></p>
+        <h1 class="logo-neon parpadeo" data-partir="150"><span class="linea">DALE</span><span class="linea">QUE VA</span></h1>
+        <p class="lema">24 juegos para la previa en un solo celu que pasa de mano en mano. Cargás los nombres una vez y la app se encarga del resto.</p>
+        <div class="acciones">
+          <a class="boton" data-apk href="#">Descargar para Android <span>↓</span></a>
+          <a class="boton contorno cian" href="#juegos">Ver los juegos</a>
         </div>
-        <img class="icono-grande" src="/img/dalequeva.webp" alt="Ícono de Dale Que Va" width="340" height="340">
+      </div>
+
+      <aside class="datos-der" aria-hidden="true">
+        <p><small>Juegos</small> 24</p>
+        <p><small>Internet</small> No hace falta</p>
+        <p class="separado"><small>Una app de</small><b>ByFoogles</b></p>
+        <img class="icono-flotante" src="/img/dalequeva.webp" alt="" width="150" height="150">
+      </aside>
+
+      <div class="lateral" aria-hidden="true">Deslizá para entrar a la previa</div>
+
+      <div class="tira">
+        <span class="tira-nivel" style="--c: var(--cian)"><i></i><span>Amigos<br><small>Gratis</small></span></span>
+        <span class="tira-nivel" style="--c: var(--violeta)"><i></i><span>Amiguitas<br><small>Gratis</small></span></span>
+        <span class="tira-nivel" style="--c: var(--hot)"><i></i><span>Hot<br><small>Pago único</small></span></span>
+        <span class="tira-dato"><b>0</b> anuncios</span>
+        <span class="tira-dato" style="margin-left:0"><b>1</b> celu para todos</span>
       </div>
     </section>
 
-    <section>
-      <div class="envoltura cifras">
-        <div class="cifra"><b>24</b><span>juegos</span></div>
-        <div class="cifra"><b>3</b><span>niveles de picante</span></div>
-        <div class="cifra"><b>0</b><span>internet necesario</span></div>
-        <div class="cifra"><b>1</b><span>celu para toda la ronda</span></div>
+    <section class="escena-sec">
+      <div class="reparto" aria-hidden="true"><span>Verdad o Reto</span><span>Yo Nunca</span><span>Juego del Rey</span><span>Ruleta Rusa</span></div>
+      <div class="escena">
+        <h2 class="titulo-gigante" aria-label="La previa"><span class="parte izq">LA</span><span class="parte der">PREVIA</span></h2>
+        <div class="escena-icono"><div class="halo"></div><img src="/img/dalequeva.webp" alt="Ícono de Dale Que Va" width="400" height="400"></div>
+        <span class="anio">[+18]</span>
+        <a class="sello" data-apk href="#" aria-label="Descargar Dale Que Va">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="circulo" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#circulo">DESCARGAR • GRATIS • ANDROID • +18 •</textPath></text>
+          </svg>
+          <b>↓</b>
+        </a>
       </div>
+      <div class="escena-pie">
+        <div class="revelar">
+          <p class="sobre rojo">● Cómo funciona</p>
+          <p>Un solo celu que pasa de mano en mano. Elegís el juego y el nivel, y la app arma las rondas con los nombres de todos: quién pregunta, quién responde, quién toma.</p>
+        </div>
+        <div class="circulos revelar">
+          <div class="circulo blanco"><small>Juegos</small><b>24</b></div>
+          <div class="circulo rojo"><small>Edad</small><b>+18</b></div>
+          <div class="circulo cian"><small>Niveles</small><b>3</b></div>
+        </div>
+        <blockquote class="cita revelar">“Arrancá tranqui, entrá en confianza y terminá sin filtros.”</blockquote>
+      </div>
+      <div class="cinta" aria-hidden="true"><div class="cinta-pista"><span>😈 Verdad o Reto</span><span>🙊 Yo Nunca Nunca</span><span>🤴 El Juego del Rey</span><span>🔫 Ruleta Rusa</span><span>🍾 La Botellita</span><span>⚔️ Versus</span><span>🎲 El Viaje Prohibido</span><span>⚖️ ¿Qué Preferís?</span><span>👑 Mazo del Rey Criollo</span><span>🍺 Vaso Lleno</span><span>🃏 Blackjack Criollo</span><span>♠️ Poker</span><span>😈 Verdad o Reto</span><span>🙊 Yo Nunca Nunca</span><span>🤴 El Juego del Rey</span><span>🔫 Ruleta Rusa</span><span>🍾 La Botellita</span><span>⚔️ Versus</span><span>🎲 El Viaje Prohibido</span><span>⚖️ ¿Qué Preferís?</span><span>👑 Mazo del Rey Criollo</span><span>🍺 Vaso Lleno</span><span>🃏 Blackjack Criollo</span><span>♠️ Poker</span></div></div>
     </section>
 
-    <section id="niveles">
+    <section class="bloque" id="niveles">
       <div class="envoltura">
         <div class="titulo-seccion">
-          <p class="etiqueta">Elegí el clima</p>
-          <h2>Tres niveles, la misma ronda</h2>
-          <p class="bajada">Cada juego se adapta al grupo: arrancás tranqui y subís cuando la previa lo pide.</p>
+          <p class="etiqueta">● Elegí el clima</p>
+          <h2 data-partir>Tres niveles, <em>una ronda</em></h2>
+          <p class="bajada revelar">Cada juego se adapta al grupo: arrancás tranqui y subís cuando la previa lo pide.</p>
         </div>
         <div class="niveles">
-          <div class="nivel"><span class="precio-nivel">GRATIS</span><h3>Amigos</h3><p>Para arrancar: tragos, risas, anécdotas y retos para cualquier grupo.</p></div>
-          <div class="nivel amiguitas"><span class="precio-nivel">GRATIS</span><h3>Amiguitas</h3><p>Más confianza: chamuyo, confesiones, picos y un poco de roce.</p></div>
-          <div class="nivel hot"><span class="precio-nivel">+18 · PAGO</span><h3>Hot</h3><p>Sin filtros: deseos, fantasías, prendas y retos para grupos sin tabúes.</p></div>
+          <div class="nivel revelar"><span class="num">01</span><span class="precio-nivel">GRATIS</span><h3>Amigos</h3><p>Para arrancar: tragos, risas, anécdotas y retos para cualquier grupo.</p></div>
+          <div class="nivel amiguitas revelar"><span class="num">02</span><span class="precio-nivel">GRATIS</span><h3>Amiguitas</h3><p>Más confianza: chamuyo, confesiones, picos y un poco de roce.</p></div>
+          <div class="nivel hot revelar"><span class="num">03</span><span class="precio-nivel">+18 · PAGO ÚNICO</span><h3>Hot</h3><p>Sin filtros: deseos, fantasías, prendas y retos para grupos sin tabúes.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="juegos">
+    <section class="bloque" id="juegos" style="padding-top:20px">
       <div class="envoltura">
         <div class="titulo-seccion">
-          <p class="etiqueta">El catálogo</p>
-          <h2>24 juegos para toda la noche</h2>
-          <p class="bajada">Algunos se juegan en el celu y otros son clásicos de mesa: para esos, la app te da las reglas, los premios y los castigos.</p>
+          <p class="etiqueta">● El catálogo</p>
+          <h2 data-partir>24 juegos para <em>toda la noche</em></h2>
+          <p class="bajada revelar">Algunos se juegan en el celu y otros son clásicos de mesa: para esos, la app te da las reglas, los premios y los castigos.</p>
         </div>
         <div class="leyenda">
           <span><i class="punto amigos"></i>Amigos</span>
@@ -234,63 +278,73 @@
       </div>
     </section>
 
-    <section id="hot">
+    <section class="bloque hot-sec" id="hot">
+      <div class="hot-fondo" aria-hidden="true">HOT</div>
       <div class="envoltura">
-        <div class="caja-hot">
-          <p class="etiqueta">Nivel Hot</p>
-          <h2>Desbloqueá el Hot para siempre</h2>
-          <p class="bajada">Una sola compra por Mercado Pago y el nivel Hot queda abierto en todos los juegos que lo tienen, incluidos Dados del Deseo y Strip Poker.</p>
-          <ul>
-            <li>Pago único: sin suscripciones ni cobros escondidos.</li>
-            <li>Recibís un código al instante y lo activás con un toque.</li>
-            <li>Si reinstalás la app, el mismo código te sirve.</li>
-          </ul>
-          <p class="precio"><span data-precio>…</span> <small>pago único</small></p>
-          <div class="fila-botones">
-            <a class="boton hot" href="/comprar/">Comprar Hot</a>
+        <div class="caja-hot revelar">
+          <div>
+            <p class="sobre rojo">● Nivel Hot · +18</p>
+            <h2>Desbloqueá el Hot para siempre</h2>
+            <p class="bajada">Una sola compra por Mercado Pago y el nivel Hot queda abierto en todos los juegos que lo tienen, incluidos Dados del Deseo y Strip Poker.</p>
+            <ul>
+              <li>Pago único: sin suscripciones ni cobros escondidos.</li>
+              <li>Recibís un código al instante y lo activás con un toque.</li>
+              <li>Si reinstalás la app, el mismo código te sirve.</li>
+            </ul>
+          </div>
+          <div class="lado">
+            <div class="candado" aria-hidden="true">🔓</div>
+            <p class="precio"><span data-precio>…</span><small>pago único</small></p>
+            <div class="fila-botones" style="justify-content:center">
+              <a class="boton hot" href="/comprar/">Comprar Hot <span>↗</span></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <div class="cinta hot" aria-hidden="true"><div class="cinta-pista"><span>🔥 Dados del Deseo</span><span>♠️ Strip Poker</span><span>😈 Retos sin filtro</span><span>🙊 Confesiones +18</span><span>🍾 Botellita Hot</span><span>🤴 El Rey sin piedad</span><span>🎲 Viaje Prohibido Hot</span><span>⚔️ Versus Hot</span><span>🔥 Dados del Deseo</span><span>♠️ Strip Poker</span><span>😈 Retos sin filtro</span><span>🙊 Confesiones +18</span><span>🍾 Botellita Hot</span><span>🤴 El Rey sin piedad</span><span>🎲 Viaje Prohibido Hot</span><span>⚔️ Versus Hot</span></div></div>
 
-    <section id="instalar">
+    <section class="bloque clara" id="instalar">
       <div class="envoltura">
-        <div class="titulo-seccion">
-          <p class="etiqueta">Cómo instalarla</p>
-          <h2>En un minuto la tenés</h2>
-          <p class="bajada">Dale Que Va se descarga desde acá, no desde Play Store. Android te va a pedir permiso para instalarla: es normal con las apps que se bajan de un sitio.</p>
+        <p class="etiqueta">● Cómo instalarla</p>
+        <div class="gigante-claro" style="margin-top:20px">
+          <span data-partir>Instalala</span><small>en</small><span data-partir="200">1 minuto</span>
         </div>
+        <p class="revelar" style="margin-top:28px;max-width:640px;color:rgba(7,6,13,.65)">Dale Que Va se descarga desde acá, no desde Play Store. Android te va a pedir permiso para instalarla: es normal con las apps que se bajan de un sitio.</p>
         <div class="pasos">
-          <div class="paso"><h3>Descargala</h3><p>Tocá «Descargar para Android» desde el celu. Se baja el archivo <b>DaleQueVa.apk</b>.</p></div>
-          <div class="paso"><h3>Abrí el archivo</h3><p>Desde la notificación de descarga o desde la carpeta Descargas.</p></div>
-          <div class="paso"><h3>Dale permiso</h3><p>Si Android pregunta, activá «Permitir de esta fuente» para tu navegador y volvé atrás.</p></div>
-          <div class="paso"><h3>Instalá y jugá</h3><p>Tocá «Instalar», abrila, cargá los nombres de la ronda y elegí un juego.</p></div>
+          <div class="paso revelar"><h3>Descargala</h3><p>Tocá «Descargar para Android» desde el celu. Se baja el archivo <b>DaleQueVa.apk</b>.</p></div>
+          <div class="paso revelar"><h3>Abrí el archivo</h3><p>Desde la notificación de descarga o desde la carpeta Descargas.</p></div>
+          <div class="paso revelar"><h3>Dale permiso</h3><p>Si Android pregunta, activá «Permitir de esta fuente» para tu navegador y volvé atrás.</p></div>
+          <div class="paso revelar"><h3>Jugá</h3><p>Tocá «Instalar», abrila, cargá los nombres de la ronda y elegí un juego.</p></div>
+        </div>
+        <div class="acciones">
+          <a class="boton" data-apk href="#">Descargar para Android <span>↓</span></a>
         </div>
       </div>
     </section>
 
-    <section id="preguntas">
-      <div class="envoltura">
-        <div class="titulo-seccion"><p class="etiqueta">Preguntas</p><h2>Lo que nos suelen preguntar</h2></div>
-        <details><summary>¿Es gratis?</summary><p>Sí. Los niveles Amigos y Amiguitas son gratis y sin anuncios. Solo el nivel Hot se paga, una única vez.</p></details>
-        <details><summary>¿Necesita internet?</summary><p>No. Todo funciona sin conexión. Solo se usa internet para comprar el Hot.</p></details>
-        <details><summary>¿Está en Play Store?</summary><p>Por ahora no: se descarga desde este sitio. Por eso Android pide permiso para instalarla.</p></details>
-        <details><summary>¿Hay versión para iPhone?</summary><p>Todavía no. Por ahora es solo para Android.</p></details>
-        <details><summary>Compré el Hot y perdí el código</summary><p>Entrá a <a href="/comprar/">Comprar Hot</a> y usá «Ya pagué»: con el número de operación de Mercado Pago lo recuperás.</p></details>
-        <details><summary>¿Guardan mis datos?</summary><p>No. La app no tiene cuentas ni manda datos a ningún lado: los nombres de los jugadores quedan solo en tu celu. Más detalles en <a href="/privacidad/">Privacidad</a>.</p></details>
+    <section class="bloque" id="preguntas">
+      <div class="envoltura preguntas-grilla">
+        <div class="titulo-seccion"><p class="etiqueta">● Preguntas</p><h2 data-partir>Lo que nos <em>suelen preguntar</em></h2></div>
+        <div>
+          <details><summary>¿Es gratis?</summary><p>Sí. Los niveles Amigos y Amiguitas son gratis y sin anuncios. Solo el nivel Hot se paga, una única vez.</p></details>
+          <details><summary>¿Necesita internet?</summary><p>No. Todo funciona sin conexión. Solo se usa internet para comprar el Hot.</p></details>
+          <details><summary>¿Está en Play Store?</summary><p>Por ahora no: se descarga desde este sitio. Por eso Android pide permiso para instalarla.</p></details>
+          <details><summary>¿Hay versión para iPhone?</summary><p>Todavía no. Por ahora es solo para Android.</p></details>
+          <details><summary>Compré el Hot y perdí el código</summary><p>Entrá a <a href="/comprar/">Comprar Hot</a> y usá «Ya pagué»: con el número de operación de Mercado Pago lo recuperás.</p></details>
+          <details><summary>¿Guardan mis datos?</summary><p>No. La app no tiene cuentas ni manda datos a ningún lado: los nombres de los jugadores quedan solo en tu celu. Más detalles en <a href="/privacidad/">Privacidad</a>.</p></details>
+        </div>
       </div>
-    </section>
-
-    <section>
-      <div class="envoltura">
-        <div class="aviso"><b>Solo para mayores de 18.</b> Todo es voluntario: nadie está obligado a tomar, a cumplir una prenda ni un reto, y cualquiera puede dejar de jugar cuando quiera. Lo que tenga contacto físico, solo si todos los involucrados están de acuerdo. Si vas a manejar, no tomes. <a href="/terminos/">Leer términos y avisos</a>.</div>
+      <div class="envoltura" style="margin-top:50px">
+        <div class="aviso revelar"><b>Solo para mayores de 18.</b> Todo es voluntario: nadie está obligado a tomar, a cumplir una prenda ni un reto, y cualquiera puede dejar de jugar cuando quiera. Lo que tenga contacto físico, solo si todos los involucrados están de acuerdo. Si vas a manejar, no tomes. <a href="/terminos/">Leer términos y avisos</a>.</div>
       </div>
     </section>
   </main>
   <footer>
-    <div class="envoltura">
+    <div class="pie-gigante" aria-hidden="true">DALE QUE VA</div>
+    <div class="pie-fila">
       <div>
-        <p><span class="chip18">+18</span> Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
+        <p><span class="chip18">+18</span>&nbsp; Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
         <p style="margin-top:8px">© <span data-anio></span> Dale Que Va · una app de <a href="https://byfoogles.app">ByFoogles</a></p>
       </div>
       <nav>
@@ -302,6 +356,7 @@
     </div>
   </footer>
   <script src="/sitio.js"></script>
+  <script src="/animaciones.js"></script>
 
 </body>
 </html>
