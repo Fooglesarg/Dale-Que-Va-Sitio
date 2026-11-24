@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Comprar el nivel Hot · Dale Que Va</title>
+  <meta name="description" content="Desbloqueá el nivel Hot de Dale Que Va con un pago único por Mercado Pago.">
+  <meta name="theme-color" content="#07060d">
+  <meta name="rating" content="adult">
+  <link rel="canonical" href="https://dalequeva.byfoogles.app/comprar/">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Comprar el nivel Hot · Dale Que Va">
+  <meta property="og:description" content="Desbloqueá el nivel Hot de Dale Que Va con un pago único por Mercado Pago.">
+  <meta property="og:url" content="https://dalequeva.byfoogles.app/comprar/">
+  <meta property="og:image" content="https://dalequeva.byfoogles.app/img/compartir.jpg">
+  <meta property="og:locale" content="es_AR">
+  <link rel="preload" href="/fuentes/outfit.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <div class="envoltura">
+      <a class="marca" href="/"><img src="/img/dalequeva.webp" alt="" width="34" height="34">Dale Que Va</a>
+      <nav>
+        <a href="/#juegos">Juegos</a>
+        <a href="/#hot">Hot</a>
+        <a href="/#instalar">Instalar</a>
+        <a class="boton chico" data-apk href="#">Descargar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="pagina">
+      <div class="envoltura">
+        <p class="etiqueta">Nivel Hot</p>
+        <h1>Desbloqueá el Hot</h1>
+        <p>Una sola compra y el nivel Hot queda abierto para siempre en todos los juegos que lo tienen. Al pagar recibís un código que activás con un toque desde el celu.</p>
+
+        <div class="tarjeta hot">
+          <p class="precio"><span data-precio>…</span> <small>pago único · Mercado Pago</small></p>
+          <label class="casilla"><input type="checkbox" id="mayor"><span>Tengo 18 años o más.</span></label>
+          <label class="casilla"><input type="checkbox" id="acepto"><span>Leí y acepto los <a href="/terminos/" target="_blank">términos y avisos</a>.</span></label>
+          <div class="fila-botones">
+            <button class="boton hot" id="pagar" disabled>Pagar con Mercado Pago</button>
+          </div>
+          <p class="mensaje error oculto" id="error-pago"></p>
+        </div>
+
+        <div class="tarjeta">
+          <h2 style="margin-top:0">Ya pagué</h2>
+          <p>Si cerraste la página antes de ver tu código o lo perdiste, ingresá el número de operación que figura en el comprobante de Mercado Pago.</p>
+          <div class="fila-botones">
+            <input class="campo" id="operacion" inputmode="numeric" placeholder="Número de operación" style="flex:1;min-width:200px">
+            <button class="boton contorno hot" id="recuperar">Ver mi código</button>
+          </div>
+          <p class="mensaje error oculto" id="error-recuperar"></p>
+        </div>
+
+        <h2>Cómo funciona</h2>
+        <ol>
+          <li>Pagás con Mercado Pago (tarjeta, dinero en cuenta u otros medios).</li>
+          <li>Volvés a esta página y aparece tu código.</li>
+          <li>Tocás «Activar en la app» desde el celu, o copiás el código y lo pegás en la app (Ajustes → Ingresar código).</li>
+        </ol>
+        <p>Antes de comprar, instalá la app desde <a href="/#instalar">la página principal</a>. Si algo falla, usá el <a href="/arrepentimiento/">botón de arrepentimiento</a> dentro de los 10 días.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="envoltura">
+      <div>
+        <p><span class="chip18">+18</span> Solo para mayores de 18. Tomá con responsabilidad: nadie está obligado a tomar ni a cumplir una consigna.</p>
+        <p style="margin-top:8px">© <span data-anio></span> Dale Que Va · una app de <a href="https://byfoogles.app">ByFoogles</a></p>
+      </div>
+      <nav>
+        <a href="/terminos/">Términos y avisos</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/comprar/">Comprar Hot</a>
+        <a class="arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/sitio.js"></script>
+  <script>
+    const mayor = document.getElementById("mayor"), acepto = document.getElementById("acepto"), pagar = document.getElementById("pagar");
+    const mostrar = (id, texto) => { const e = document.getElementById(id); e.textContent = texto; e.classList.toggle("oculto", !texto); };
+    precioListo.then((precio) => {
+      const actualizar = () => (pagar.disabled = !(precio && mayor.checked && acepto.checked));
+      mayor.onchange = acepto.onchange = actualizar;
+      actualizar();
+      if (!precio) mostrar("error-pago", "La compra se habilita muy pronto.");
+    });
+    if (new URLSearchParams(location.search).get("error") === "pago") mostrar("error-pago", "El pago no se completó. Podés intentar de nuevo.");
+    pagar.onclick = async () => {
+      pagar.disabled = true; mostrar("error-pago", "");
+      try {
+        const r = await pedir("/preferencia", { method: "POST" });
+        if (!r.url) throw new Error(r.error);
+        location.href = r.url;
+      } catch (e) {
+        mostrar("error-pago", e.message || "No pudimos conectar con Mercado Pago. Probá de nuevo.");
+        pagar.disabled = false;
+      }
+    };
+    document.getElementById("recuperar").onclick = () => {
+      const op = document.getElementById("operacion").value.replace(/\D/g, "");
+      if (!op) return mostrar("error-recuperar", "Ingresá el número de operación.");
+      location.href = "/gracias/?payment_id=" + op;
+    };
+  </script>
+</body>
+</html>

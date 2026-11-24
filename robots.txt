@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /gracias/
+Sitemap: https://dalequeva.byfoogles.app/sitemap.xml
