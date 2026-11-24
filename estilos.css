@@ -274,3 +274,23 @@ footer { background: var(--fondo); padding: 60px var(--margen) 34px; overflow: h
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .letra, .revelar, .juego { opacity: 1; transform: none; }
 }
+
+/* ---------------------------------------------------------------- Volver a byfoogles.app */
+@property --giro { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.barra-izq { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.volver { --giro: 0deg; position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 8px; border-radius: 999px; text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--texto); background: rgba(7, 6, 13, .55); isolation: isolate; animation: volver-entra .9s var(--ease) .4s both, volver-gira 4s linear infinite; transition: transform .35s var(--ease), box-shadow .35s; }
+/* Borde neón que gira alrededor de la píldora */
+.volver::before { content: ""; position: absolute; inset: -1.5px; border-radius: inherit; z-index: -1; background: conic-gradient(from var(--giro), var(--magenta), var(--violeta), var(--cian), var(--magenta)); -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); padding: 1.5px; }
+.volver-flecha { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--magenta); color: var(--fondo); box-shadow: 0 0 14px var(--magenta); animation: volver-late 2.4s var(--ease) 1.4s infinite; transition: transform .35s var(--ease); }
+.volver-texto { transition: letter-spacing .35s var(--ease); }
+.volver:hover { transform: translateX(-3px); box-shadow: 0 0 26px rgba(255, 46, 196, .45); }
+.volver:hover .volver-flecha { animation: volver-empuja .6s var(--ease) infinite alternate; }
+.volver:hover .volver-texto { letter-spacing: 3px; }
+.barra.clara .volver { color: var(--fondo); background: rgba(243, 241, 238, .7); }
+@keyframes volver-gira { to { --giro: 360deg; } }
+@keyframes volver-entra { from { opacity: 0; transform: translateX(-28px); filter: blur(6px); } }
+@keyframes volver-late { 0%, 70%, 100% { transform: translateX(0); } 80% { transform: translateX(-4px); } 90% { transform: translateX(1px); } }
+@keyframes volver-empuja { from { transform: translateX(0); } to { transform: translateX(-5px); } }
+@media (max-width: 860px) { .volver-texto { display: none; } .volver { padding: 5px; } .barra-izq { gap: 12px; } }
+@media (max-width: 380px) { .marca { font-size: 11px; letter-spacing: 1px; } }
+@media (prefers-reduced-motion: reduce) { .volver, .volver-flecha, .volver:hover .volver-flecha { animation: none; } }
