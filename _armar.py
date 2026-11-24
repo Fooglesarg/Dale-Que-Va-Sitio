@@ -201,6 +201,34 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
     <section class="bloque hot-sec" id="hot">
       <div class="hot-fondo" aria-hidden="true">HOT</div>
       <div class="envoltura">
+        <div class="caja-hot amiguitas revelar">
+          <div>
+            <p class="sobre violeta">● Solo Amiguitas · sin Hot</p>
+            <h2>¿Arrancan tranqui? Abrí Amiguitas</h2>
+            <p class="bajada">Para el grupo que ya entró en confianza pero todavía no se anima al Hot: chamuyo, confesiones, picos y un poco de roce, en todos los juegos que lo tienen.</p>
+            <ul>
+              <li>Pago único, más barato que el pack.</li>
+              <li>Recibís un código al instante y lo activás con un toque.</li>
+              <li>¿Después se calienta la previa? El pack completo trae Amiguitas y Hot.</li>
+            </ul>
+          </div>
+          <div class="lado">
+            <div class="candado" aria-hidden="true">
+              <svg viewBox="0 0 120 150">
+                <path class="candado-arco" d="M36 74 V48 a24 24 0 0 1 48 0 V74"/>
+                <rect class="candado-cuerpo" x="16" y="70" width="88" height="70" rx="18"/>
+                <circle class="candado-ojo" cx="60" cy="100" r="8"/>
+                <rect class="candado-ojo" x="56" y="102" width="8" height="18" rx="4"/>
+              </svg>
+              <i class="chispa" style="--x:-58px;--y:-40px"></i><i class="chispa" style="--x:56px;--y:-50px"></i><i class="chispa" style="--x:-50px;--y:30px"></i><i class="chispa" style="--x:60px;--y:22px"></i><i class="chispa" style="--x:0px;--y:-70px"></i>
+            </div>
+            <p class="precio"><span data-precio="amiguitas">…</span><small>solo Amiguitas · pago único</small></p>
+            <div class="fila-botones" style="justify-content:center">
+              <a class="boton violeta" href="/comprar/?producto=amiguitas">Comprar Amiguitas <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
         <div class="caja-hot revelar">
           <div>
             <p class="sobre rojo">● Pack completo · Amiguitas + Hot · +18</p>
@@ -208,7 +236,7 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
             <p class="bajada">Amigos es gratis. Con una sola compra por Mercado Pago abrís Amiguitas y Hot en todos los juegos que los tienen, incluidos Dados del Deseo y Strip Poker.</p>
             <ul>
               <li>Pago único: sin suscripciones ni cobros escondidos.</li>
-              <li>¿Solo querés Amiguitas? También se vende sola: <span data-precio="amiguitas">…</span>.</li>
+              <li>El mejor precio: Amiguitas y Hot juntos.</li>
               <li>Recibís un código al instante y lo activás con un toque.</li>
               <li>Si reinstalás la app, el mismo código te sirve.</li>
             </ul>
