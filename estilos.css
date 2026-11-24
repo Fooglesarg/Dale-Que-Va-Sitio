@@ -198,7 +198,23 @@ section.bloque { padding: 110px 0; position: relative; }
 .caja-hot ul { margin: 18px 0 0 20px; color: var(--suave); }
 .caja-hot li { margin: 6px 0; }
 .caja-hot .lado { text-align: center; }
-.candado { font-size: 64px; line-height: 1; filter: drop-shadow(0 0 20px rgba(255, 59, 92, .8)); animation: flotar 5s ease-in-out infinite; }
+/* Candado: cerrado; se abre al pasar el mouse por la caja (en celus, cuando aparece en pantalla). */
+.candado { position: relative; width: 104px; margin: 0 auto; animation: flotar 5s ease-in-out infinite; }
+.candado svg { display: block; width: 100%; overflow: visible; filter: drop-shadow(0 0 14px rgba(255, 59, 92, .75)); transition: filter .5s; }
+.candado-arco { fill: none; stroke: var(--hot); stroke-width: 11; stroke-linecap: round; transform-box: fill-box; transform-origin: 100% 100%; transition: transform .55s cubic-bezier(.3, 1.6, .5, 1); }
+.candado-cuerpo { fill: color-mix(in srgb, var(--hot) 22%, var(--fondo)); stroke: var(--hot); stroke-width: 5; transition: fill .4s; }
+.candado-ojo { fill: var(--hot); transition: fill .3s .15s; }
+.caja-hot:hover .candado-arco, .candado.abierto .candado-arco { transform: translateY(-16px) rotate(-32deg); }
+.caja-hot:hover .candado-cuerpo, .candado.abierto .candado-cuerpo { fill: color-mix(in srgb, var(--hot) 38%, var(--fondo)); }
+.caja-hot:hover .candado-ojo, .candado.abierto .candado-ojo { fill: var(--dorado); }
+.caja-hot:hover .candado svg, .candado.abierto svg { filter: drop-shadow(0 0 22px rgba(255, 59, 92, 1)) drop-shadow(0 0 40px rgba(255, 211, 78, .45)); }
+.caja-hot:not(:hover) .candado:not(.abierto) .candado-arco { animation: candado-tiembla 4s ease-in-out 2s infinite; }
+@keyframes candado-tiembla { 0%, 86%, 100% { transform: none; } 89% { transform: rotate(-6deg); } 92% { transform: rotate(5deg); } 95% { transform: rotate(-3deg); } }
+.chispa { position: absolute; left: 50%; top: 55%; width: 7px; height: 7px; margin: -3.5px; border-radius: 50%; background: var(--dorado); box-shadow: 0 0 10px var(--dorado); opacity: 0; pointer-events: none; }
+.caja-hot:hover .chispa, .candado.abierto .chispa { animation: chispa .8s var(--ease) .2s both; }
+.chispa:nth-of-type(2) { animation-delay: .26s !important; } .chispa:nth-of-type(3) { animation-delay: .32s !important; } .chispa:nth-of-type(4) { animation-delay: .22s !important; } .chispa:nth-of-type(5) { animation-delay: .3s !important; }
+@keyframes chispa { 0% { opacity: 0; transform: translate(0, 0) scale(.4); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .candado, .candado-arco, .chispa { animation: none !important; } }
 .precio { font-family: "Anton", sans-serif; font-size: clamp(44px, 5vw, 64px); font-weight: 400; line-height: 1.1; margin: 10px 0 4px; }
 .precio small { font-family: "Outfit", sans-serif; font-size: 15px; color: var(--suave); display: block; }
 @media (max-width: 860px) { .caja-hot { grid-template-columns: 1fr; } }

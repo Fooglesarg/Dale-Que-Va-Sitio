@@ -214,7 +214,15 @@ pagina("", "Dale Que Va · Juegos de previa para el celu",
             </ul>
           </div>
           <div class="lado">
-            <div class="candado" aria-hidden="true">🔓</div>
+            <div class="candado" aria-hidden="true">
+              <svg viewBox="0 0 120 150">
+                <path class="candado-arco" d="M36 74 V48 a24 24 0 0 1 48 0 V74"/>
+                <rect class="candado-cuerpo" x="16" y="70" width="88" height="70" rx="18"/>
+                <circle class="candado-ojo" cx="60" cy="100" r="8"/>
+                <rect class="candado-ojo" x="56" y="102" width="8" height="18" rx="4"/>
+              </svg>
+              <i class="chispa" style="--x:-58px;--y:-40px"></i><i class="chispa" style="--x:56px;--y:-50px"></i><i class="chispa" style="--x:-50px;--y:30px"></i><i class="chispa" style="--x:60px;--y:22px"></i><i class="chispa" style="--x:0px;--y:-70px"></i>
+            </div>
             <p class="precio"><span data-precio="pack">…</span><small>pack completo · pago único</small></p>
             <div class="fila-botones" style="justify-content:center">
               <a class="boton hot" href="/comprar/?producto=pack">Comprar el pack <span>↗</span></a>

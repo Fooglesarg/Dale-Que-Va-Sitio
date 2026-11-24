@@ -207,3 +207,13 @@ document.querySelectorAll(".juego").forEach((j) => j.addEventListener("pointermo
   addEventListener("resize", actualizar);
   actualizar();
 })();
+
+/* ------------------------------------------------ Candado: en celus (sin mouse) se abre al aparecer */
+(function candado() {
+  const c = document.querySelector(".candado");
+  if (!c || matchMedia("(hover: hover)").matches) return;
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) setTimeout(() => c.classList.add("abierto"), 500);
+    else c.classList.remove("abierto");
+  }, { threshold: 0.8 }).observe(c);
+})();
