@@ -1,0 +1,12 @@
+Tipografías de dalequeva.byfoogles.app
+
+Todas se usan sin modificar y bajo la SIL Open Font License 1.1.
+El texto completo de cada licencia está en esta misma carpeta.
+
+- monoton.ttf       Monoton     © 2011 Vernon Adams                     LICENCIA-monoton.txt
+                    (nombre reservado "Monoton")
+- anton.woff2       Anton       © 2020 The Anton Project Authors       LICENCIA-anton.txt
+- unbounded.woff2   Unbounded   © 2022 The Unbounded Project Authors   LICENCIA-unbounded.txt
+- outfit.ttf        Outfit      © 2021 The Outfit Project Authors      LICENCIA-outfit.txt
+
+Más información: https://openfontlicense.org
